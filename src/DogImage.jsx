@@ -5,3 +5,4 @@ export const DogImage = () => {
 }
 
 export default DogImage
+
