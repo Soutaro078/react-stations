@@ -1,6 +1,8 @@
 // DO NOT DELETE
 import { useState } from 'react'
 import './App.css'
+import { Header } from './Header'
+import { Description } from './Description'
 
 /**
  * @type {() => JSX.Element}
@@ -27,13 +29,20 @@ export const App = () => {
   };
 
   return (
-    <div>
-      <header>Dogアプリ</header>
-      <figure>
-        <img src={dogUrl} alt="ランダムな犬の画像" />
-        <figcaption>この画像はランダムに選ばれた犬の写真です。</figcaption>
-      </figure>
-      <button onClick={fetchDogImage}>更新</button>
-    </div>
+
+    <>
+      {/* Header.jsxから画像を取り出す機能 */}
+      <Header />
+      <Description dogUrl={dogUrl} onClick={fetchDogImage} />    
+    </>
   )
 }
+
+{/* <div>
+<header className='header'>Dogアプリ</header>
+<figure>
+  <img src={dogUrl} alt="ランダムな犬の画像" />
+  <figcaption>この画像はランダムに選ばれた犬の写真です。</figcaption>
+</figure>
+<button onClick={fetchDogImage}>更新</button>
+</div> */}
